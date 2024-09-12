@@ -9,7 +9,19 @@ void recursivo(int movimento){
         printf("Rainha moveu %d casas para a esquerda\n", movimento);
     }
  }
- c
+ void recursivo_bispo(int movimento_bispo){
+  //verifica se o movimento é para o bispo
+        //loop para mover o bispo
+        for (int i = 1; i <= movimento_bispo; i++) {
+        for (int j = 1; j <= i; j++) {
+            if (i == j) {
+                printf("Bispo moveu 1 casa para cima e 1 casa para a direita (posição: %d, %d)\n", i, j);
+            }
+        }
+    }
+    printf("Bispo moveu %d casas na diagonal superior direita\n", movimento_bispo);
+}
+
 
     
 
@@ -40,17 +52,15 @@ int main() {
 
     //Implementação de Movimentação do Cavalo
      printf("Movimentação do Cavalo\n");
-     for(i = 0, j = 0; i <= mov_cavalo_cima || j <= mov_cavalo_direita;){
+     for(i = 0, j = 0; i <= mov_cavalo_cima && j <= mov_cavalo_direita;){
         //movimento vertical (cima)
-        if(i <= mov_cavalo_cima){
+        if(i < mov_cavalo_cima){
             i++;
             printf("O cavalo moveu %d casas para cima\n", i);
             //se o movimento para cima estiver completo, continue para o proximo movimento
-            if( i == mov_cavalo_cima){
-            }
         }
         //movimento horizontal(direita)
-        if(i == mov_cavalo_cima && j <= mov_cavalo_direita){
+        if(i == mov_cavalo_cima && j < mov_cavalo_direita){
             j++;
             printf("O cavalo moveu %d casa para direita\n", j);
         } 
